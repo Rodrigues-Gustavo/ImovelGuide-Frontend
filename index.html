@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="https://www.imovelguide.com.br/img/favicon.png" type="image/png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.2.2/html2canvas.min.js"></script>
+
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/header.css">
+    <link rel="stylesheet" href="./style/home.css">
+
+    <title>Imóvel Guide</title>
+</head>
+<body>
+
+    <header class="headerContainer">
+        <div class="headerContent container flex">
+            <div class="contentLeft flex">
+                <div class="logo">
+                    <img src="./assets/logo.webp" alt="">
+                </div>
+    
+                <nav class="navLeft">
+                    <ul class="flex">
+                        <li><a href="#" target="_blank">Condomínios</a></li>
+                        <li><a href="#" target="_blank">Fórum</a></li>
+                        <li><a href="#" target="_blank">Guia</a></li>
+                        <li><a href="#" target="_blank">Artigos</a></li>
+                        <li><a href="#" target="_blank">Ferramentas</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <nav class="navRight">
+                <ul class="flex">
+                    <li><a href="#" target="_blank">Cotar Imóvel</a></li>
+                    <li><a href="#" target="_blank">Planos</a></li>
+                    <li><a href="#" target="_blank">Entrar</a></li>
+                    <button class="btnCadastro">Cadastre-se</button>
+                </ul>
+            </nav>
+            <button class="btnMobile" id="openMenu">
+                <i class='bx bx-menu'></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="menuMobile">
+        <div class="overlay" id="overlay"></div>
+        <aside>
+            <div class="headerContent container flexMobile">
+                <div class="contentLeft flexMobile">
+        
+                    <nav class="navLeft">
+                        <ul class="flexMobile">
+                            <li><a href="#" target="_blank">Condomínios</a></li>
+                            <li><a href="#" target="_blank">Fórum</a></li>
+                            <li><a href="#" target="_blank">Guia</a></li>
+                            <li><a href="#" target="_blank">Artigos</a></li>
+                            <li><a href="#" target="_blank">Ferramentas</a></li>
+                        </ul>
+                    </nav>
+                </div>
+    
+                <nav class="navRight">
+                    <ul class="flexMobile">
+                        <li><a href="#" target="_blank">Cotar Imóvel</a></li>
+                        <li><a href="#" target="_blank">Planos</a></li>
+                        <li><a href="#" target="_blank">Entrar</a></li>
+                        <button class="btnCadastro">Cadastre-se</button>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+    </div>
+    
+    <main class="container">
+        <div class="contentHome">
+            <div class="containerBox">
+                <div class="content">
+                    <div class="image">
+                        <img src="./assets/woman.jpg" alt="">
+                    </div>
+                    <div class="texts">
+                        <h3>Giovanna Queiroz</h3>
+                        <span>3.000 pontos</span>
+                        <a href="#" id="verTelefone">Ver telefone</a>
+                        <p id="telefoneFormatado"></p>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="image imageMan">
+                        <img src="./assets/man.jpg" alt="">
+                    </div>
+                    <div class="texts">
+                        <h3>Yuri Alberto</h3>
+                        <span>1.260 pontos</span>
+                        <a href="#" id="verTelefoneBottom">Ver telefone</a>
+                        <p id="telefoneFormatadoBottom"></p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="containerBox">
+                <div class="contentInputs">
+                    <h2>Mande uma mensagem:</h2>
+
+                    <form class="formContainer">
+                        <input type="text" id="cpf" placeholder="Digite seu CPF" required oninput="formatarCampo(this, formatarCPF)">
+
+                        <input type="text" id="telefone" placeholder="Digite seu telefone" required oninput="formatarCampo(this, formatarTelefone)">
+
+                        <textarea rows="5" placeholder="Digite o assunto" required></textarea>
+
+                        <button type="submit" onclick="verificar()">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="containerBox">
+                <h2>Regra de 3</h2>
+
+                <form class="regraDeTresForm" id="regraDeTresForm">
+                    <input type="number" id="valor1" required class="afterInput" placeholder="60">
+            
+                    <input type="number" id="valor2" required placeholder="100">
+            
+                    <input type="number" id="valor3" required class="afterInput" placeholder="30">
+                    
+                    <input type="text" id="resultado" readonly placeholder="Resultado" class="resultado">
+                </form>
+
+                <button type="button" onclick="calcularRegraDeTres()" class="btn">Calcular</button>
+            </div>
+
+            <div class="containerBoxHouse">
+                <img src="./assets/house.jpg" alt="" class="imgHouse">
+
+                <button class="btn" id="openModal">ABRIR IMAGEM NO MODAL</button>
+            </div>
+
+            <div class="containerBoxHouse">
+                <div class="houseContent" id="conteudo">
+                    <img src="./assets/house.jpg" alt="" class="imgHouse">
+
+                    <p class="houseItem">Imóvel Guide</p>
+                </div>
+
+                <button id="capturar" class="btn btnDownload">Download</a>
+            </div>
+
+            <div class="containerBoxHouse imageZoom">
+                <img src="./assets/house.jpg" alt="">
+            </div>
+        </div>
+    </main>
+
+    <footer class="footerContainer">
+        <div class="footerContent container">
+            <div class="leftFooter">
+                <nav>
+                    <ul>
+                        <li><a href="#" target="_blank">Termos</a></li>
+                        <li><a href="#" target="_blank">Contatos</a></li>
+                        <li><a href="#" target="_blank">Sobre</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="contentCopy">
+                <p>© Copyright 2022. Todos os direitos reservados</p>
+                <div class="logo">
+                    <img src="./assets/logo.webp" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <section class="modal">
+        <div class="overlay" id="overlayModal"></div>
+        <div class="modalContent">
+            <button class="close" id="close">
+                <i class='bx bx-x' undefined ></i>
+            </button>
+
+            <img src="./assets/house.jpg" alt="">
+        </div>
+    </section>
+
+
+    <script src="./script/script.js"></script>
+    <script src="./html2canvas.js"></script>
+    <script>
+        document.getElementById('capturar').addEventListener('click', function() {
+            html2canvas(document.getElementById('conteudo')).then(function(canvas) {
+                var imgData = canvas.toDataURL('image/png');
+                
+                var a = document.createElement('a');
+                a.href = imgData;
+                a.download = 'houseimg.png';
+                a.click();
+            });
+        });
+    </script>
+</body>
+</html>

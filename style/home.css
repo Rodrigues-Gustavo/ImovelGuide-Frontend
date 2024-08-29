@@ -1,0 +1,499 @@
+:root{
+  --grayColor: #787878;
+  --orangeColor: #fe6613;
+  --blueColor: #1b2653;
+}
+
+.contentHome{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 4rem 0 0 0;
+}
+
+.contentHome .containerBox{
+  border: 2px solid #78787856;
+  width: 100%;
+  max-width: 26rem;
+  height: 100%;
+  max-height: 40rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.contentHome .containerBox .content{
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+
+.contentHome .containerBox .content .image{
+  background: url('../assets/woman.jpg');
+  background-size: cover;
+  height: 10rem;
+  width: 100%;
+  max-width: 10rem;
+  border-radius: 10px;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.contentHome .containerBox .content .imageMan{
+  background: url('../assets/man.jpg');
+  background-size: cover;
+}
+
+.contentHome .containerBox .content .image img{
+  width: 100%;
+  max-width: 6.8rem;
+  object-fit: cover;
+}
+
+.contentHome .containerBox .content .texts h3{
+  font-size: 1.4rem;
+  color: var(--blueColor);
+}
+
+.contentHome .containerBox .content .texts span{
+  display: block;
+  margin-top: .3rem;
+  margin-bottom: .3rem;
+}
+
+.contentHome .containerBox .content .texts p{
+  display: none;
+  margin-top: .5rem;
+}
+
+.contentHome .containerBox .content .texts .mostrar{
+  display: block;
+}
+
+.contentHome .containerBox .content .texts a{
+  color: var(--orangeColor);
+  text-decoration: underline;
+  transition: all .3s;
+}
+
+.contentHome .containerBox .content .texts a:hover{
+  color: #fe6513a4;
+}
+
+.contentHome .containerBox .contentInputs{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contentHome .containerBox .contentInputs h2{
+  font-size: 1.7rem;
+  color: var(--blueColor);
+  margin-bottom: 1rem;
+}
+
+.contentHome .containerBox .contentInputs .formContainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contentHome .containerBox .contentInputs .formContainer input, .contentHome .containerBox .contentInputs .formContainer textarea{
+  border-radius: 8px;
+  padding: .6rem;
+  font-size: 1rem;
+  border: 1px solid var(--grayColor);
+  outline: none;
+}
+
+.contentHome .containerBox .contentInputs .formContainer textarea{
+  resize: none;
+}
+
+.contentHome .containerBox .contentInputs .formContainer input::placeholder, .contentHome .containerBox .contentInputs .formContainer textarea::placeholder{
+  color: #7878787e;
+}
+
+.contentHome .containerBox .contentInputs .formContainer input:focus,
+.contentHome .containerBox .contentInputs .formContainer textarea:focus{
+  border-color: var(--orangeColor);
+}
+
+.contentHome .containerBox .contentInputs .formContainer button{
+  background-color: var(--orangeColor);
+  color: #fff;
+  border-radius: 8px;
+  padding: .6rem;
+  max-width: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.contentHome .containerBox .contentInputs .formContainer button:hover{
+  background-color: #e7570ac4;
+}
+
+.contentHome .containerBox h2{
+  font-size: 1.7rem;
+  color: var(--blueColor);
+  margin-bottom: 2rem;
+}
+
+.contentHome .containerBox .regraDeTresForm{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  place-items: center;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+
+.contentHome .containerBox .regraDeTresForm input{
+  border-radius: 8px;
+  padding: .6rem; 
+  font-size: 1rem;
+  border: 1px solid var(--grayColor);
+  outline: none;
+  width: 100%;
+  max-width: 10rem;
+  
+}
+
+.contentHome .containerBox .regraDeTresForm input::placeholder{
+  color: #7878787e;
+}
+
+.contentHome .containerBox .regraDeTresForm input:focus{
+  border-color: var(--orangeColor);
+}
+
+.contentHome .containerBox .regraDeTresForm .resultado{
+  border: 2px solid var(--orangeColor);
+}
+
+.contentHome .containerBox .btn{
+  background-color: var(--orangeColor);
+  color: #fff;
+  border-radius: 8px;
+  padding: .6rem;
+  max-width: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.contentHome .containerBox .btn:hover{
+  background-color: #e7570ac4;
+}
+
+.contentHome .containerBoxHouse{
+  width: 100%;
+  max-width: 26rem;
+}
+
+.contentHome .containerBoxHouse img{
+  border-radius: 6px;
+}
+
+.contentHome .containerBoxHouse .btn{
+  background-color: var(--orangeColor);
+  color: #fff;
+  border-radius: 8px;
+  padding: .6rem;
+  width: 100%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  margin-top: 1rem;
+}
+
+.contentHome .containerBoxHouse .btn:hover{
+  background-color: #e7570ac4;
+}
+
+.modal{
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 2023;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s;
+}
+
+.modal .overlay{
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal .modalContent{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 100rem;
+  height: 55rem;
+  padding: 4rem;
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: translateY(50px);
+  transition: transform .4s;
+}
+
+.modal .modalContent::after{
+  content: "";
+  position: absolute;
+  top: 10%; 
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--grayColor);
+}
+
+.modal .modalContent .close{
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  background: transparent;
+  font-size: 4rem;
+  cursor: pointer;
+  color: rgb(248, 23, 23);
+  padding: 1rem;
+}
+
+.modal .modalContent img{
+  width: 100%;
+  max-width: 80rem;
+  height: 40rem;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-top: 3rem;
+}
+
+
+.showModal .modal{
+  opacity: 1;
+  pointer-events: all;
+}
+
+.showModal .modal .modalContent{
+  transform: translateY(0px);
+}
+
+.containerBoxHouse .houseContent{
+  position: relative;
+}
+
+.containerBoxHouse .houseContent .houseItem{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fe6513cc;
+  color: #fff; 
+  padding: .7rem 1rem;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 70%;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+
+.contentHome .imageZoom{
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.contentHome .imageZoom img{
+  max-width: 100%;
+  max-height: 100%;
+  animation: zoom 3s;
+}
+
+@keyframes zoom {
+  from {
+      transform: scale(1.5);
+      
+  }
+  to {
+      transform: scale(1);
+  }
+}
+
+.footerContainer{
+  background-color: var(--blueColor);
+  height: 5rem;
+  padding: .5rem 0;
+  margin-top: 4rem;
+}
+
+.footerContainer .footerContent{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.footerContainer .footerContent .leftFooter nav ul{
+  display: flex;
+  align-items: center;
+}
+
+.footerContainer .contentCopy{
+  display: flex;
+  align-items: center;
+}
+
+.footerContainer .contentCopy .logo img{
+  width: 100%;
+  max-width: 6.8rem;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+}
+
+.footerContainer .contentCopy p{
+  color: #fff;
+  margin-right: 1rem;
+}
+
+
+@media (max-width: 1100px){
+  .contentHome{
+      grid-template-columns: repeat(2, 1fr);
+      place-items: center;
+  }
+
+  .modal .modalContent{
+      max-width: 50rem;
+      height: 40rem;
+      padding: 3rem;
+  }
+
+  .modal .modalContent .close{
+      right: 0;
+      font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1100px){
+  .contentHome{
+      grid-template-columns: repeat(2, 1fr);
+      place-items: center;
+      margin-bottom: 2rem;
+  }
+
+  .modal .modalContent{
+      max-width: 50rem;
+      height: 40rem;
+      padding: 3rem;
+  }
+
+  .modal .modalContent .close{
+      right: 0;
+      font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 900px){
+  .contentHome .containerBox{
+      max-width: 22rem;
+      padding: .6rem;
+  }
+
+  .contentHome .containerBoxHouse{
+      max-width: 22rem;
+      padding: .6rem;
+  }
+
+  .contentHome .containerBox .content{
+      margin-top: .6rem;
+  }
+
+  .contentHome .containerBox .content .image{
+      background-size: cover;
+      height: 9rem;
+      max-width: 8rem;
+  }
+
+  .contentHome .containerBox .regraDeTresForm{
+      grid-gap: .7rem;
+      margin: 1rem 0;
+  }
+
+  .contentHome .containerBox .contentInputs h2, .contentHome .containerBox h2{
+      font-size: 1.4rem;
+  }
+
+  .contentHome .containerBox .contentInputs .formContainer button, .contentHome .containerBox .btn{
+      font-size: .9rem;
+  }
+  .contentHome .containerBoxHouse .btn{
+      font-size: .9rem;
+  }
+}
+
+@media (max-width: 830px){
+  .modal .modalContent{
+      max-width: 30rem;
+      height: 30rem;
+      padding: 1.5rem;
+  }
+
+  .modal .modalContent .close{
+      top: -.4rem;
+      right: -.4rem;
+      font-size: 2rem;
+  }
+}
+
+@media (max-width: 750px){
+  .contentHome{
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  .footerContainer .footerContent{
+      justify-content: center;
+  }
+
+  .footerContainer .footerContent .leftFooter{
+      display: none;
+  }
+}
+
+@media (max-width: 570px){
+  .modal .modalContent{
+      max-width: 22rem;
+      height: 22rem;
+      padding: 1rem;
+  }
+
+  .modal .modalContent .close{
+      top: -.7rem;
+      right: -.6rem;
+  }
+
+  .footerContainer .contentCopy p{
+      font-size: .8rem;
+  }
+}

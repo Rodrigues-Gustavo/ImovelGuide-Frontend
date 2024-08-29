@@ -1,0 +1,190 @@
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerContainer{
+  background: var(--blueColor);
+  height: 5rem;
+  padding: .5rem 0;
+}
+
+.contentLeft .logo{
+  width: 100%;
+  max-width: 15rem;
+  margin-right: 4rem;
+}
+
+nav ul {
+  gap: 1.3rem;
+  margin-top: .5rem;
+}
+
+nav ul li a{
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all .3s;
+}
+
+nav ul li a:hover{
+  color: #d1cfcf;
+}
+
+.navRight ul .btnCadastro{
+  text-transform: uppercase;
+  background: transparent;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1.01rem;
+  font-weight: 500;
+  border: 2px solid #fff;
+  padding: .6rem 1.4rem;
+  cursor: pointer;
+  margin-left: 4rem;
+  transition: all .4s;
+}
+
+.navRight ul .btnCadastro:hover{
+  background: #fff;
+  color: var(--blueColor);
+}
+
+.btnMobile{
+  background: transparent;
+  color: #fff;
+  display: none;
+  margin-top: 1rem;
+}
+
+.btnMobile i{
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.menuMobile{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 80%;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s;
+}
+
+.menuMobile aside{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 80%;
+  padding: 1.5rem;
+  background-color: var(--blueColor);
+  transform: translateX(100%);
+  transition: all .3s;
+  border-radius: 0 8px 0 ;
+}
+
+.menuMobile .overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.menuMobile aside .flexMobile{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menuMobile aside .navRight .btnCadastro{
+  margin-left: 0;
+}
+
+.menuOpened{
+  overflow: hidden;  
+}
+.menuOpened .menuMobile{
+  opacity: 1;
+  pointer-events: all; 
+}
+.menuOpened .menuMobile aside{
+  transform: translateX(0%);
+}
+
+@media (max-width: 1140px){
+  .contentLeft .logo{
+      margin-right: 1rem;
+  }
+
+  nav ul {
+      gap: 1rem;
+  }
+
+  .navRight ul .btnCadastro{
+      margin-left: 1rem;
+  }
+}
+
+@media (max-width: 998px){
+  .navLeft, .navRight{
+      display: none;
+  }
+  .btnMobile{
+      display: block;
+  }
+
+  .menuMobile aside .headerContent .navLeft, .menuMobile aside .headerContent .navRight{
+      display: block;
+  }
+
+  .menuMobile aside .navRight .btnCadastro{
+      margin-left: 0;
+      margin-top: 2rem;
+  }
+
+  .menuMobile aside .navRight .flexMobile{
+      margin-top: 3rem;
+  }
+
+  aside nav ul li{
+      margin-top: .5rem;
+  }
+  
+  aside nav ul li a{
+      padding: 1rem;
+  }
+
+  .btnMobile i{
+      font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 840px){
+  .menuMobile aside{
+      width: 60%;
+  }
+}
+
+@media (max-width: 570px){
+  .menuMobile aside{
+      width: 70%;
+  }
+  .btnMobile i{
+      margin-top: -.4rem;
+  }
+}
+
+@media (max-width: 400px){
+  .contentLeft .logo{
+      max-width: 7rem;
+  }
+}
